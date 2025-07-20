@@ -13,9 +13,41 @@
   <p>  Веб-разработчик. Создаю сайты и дизайн</p>
   <button id="theme"> Сменить тему </button>
   
-  
 
   <script src="/script.js"></script>
+  <style>
+    .dark{
+  background-color: #474343;
+  color: white;
+}
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.5s, color 0.5s;
+   /*плавность смены цвета, шрифта и время*/
+  text-align: center;
+  padding: 50px;
+ 
+}
+#theme{
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+#theme:hover{
+  background-color: gray;
+  color: white;
+}
+  </style>
+  <script>
+    let button1 = document.getElementById("theme");
+let body = document.body;//Получаем доступ к тегу body для изменения стилей, цвета и т.д.
+//Создаем обработчик событий для кнопки
+//При нажатии на кнопку будет срабатывать функция, которая будет менять стили нашего body со светлого на темный и обратно
+button1.addEventListener("click",() => {
+  body.classList.toggle('light');
+  body.classList.toggle('dark');
+});
+  </script>
 </body>
 </html>
 
